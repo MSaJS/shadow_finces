@@ -18,6 +18,27 @@ void main() {
     ),
     theme: ThemeData().copyWith(
       colorScheme: kColorScheme,
+      scaffoldBackgroundColor: const Color.fromARGB(255, 199, 187, 255),
+      appBarTheme: const AppBarTheme().copyWith(
+        backgroundColor: const Color.fromARGB(255, 199, 187, 255),
+      ),
+      cardTheme: const CardTheme().copyWith(
+        color: kColorScheme.secondaryContainer,
+        margin: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 8,
+        ),
+      ),
+      textTheme: ThemeData().textTheme.copyWith(
+            titleMedium: TextStyle(
+              color: kColorScheme.onSecondaryContainer,
+              fontSize: 18,
+            ),
+            bodyMedium: TextStyle(
+              color: kColorScheme.onSecondaryContainer,
+              fontSize: 16,
+            ),
+          ),
     ),
     home: const MyExpenses(),
   ));
