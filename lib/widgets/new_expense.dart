@@ -124,26 +124,33 @@ class _NewExpenseState extends State<NewExpense> {
           const SizedBox(height: 16),
           Row(
             children: [
-              DropdownButton(
-                value: _selectedCategory,
-                items: Category.values
-                    .map(
-                      (category) => DropdownMenuItem(
-                        value: category,
-                        child: Text(
-                          toBeginningOfSentenceCase(category.name),
-                        ),
-                      ),
-                    )
-                    .toList(),
-                onChanged: (value) {
-                  if (value == null) {
-                    return;
-                  }
-                  setState(() {
-                    _selectedCategory = value;
-                  });
-                },
+              Expanded(
+                child: Column(
+                  children: [
+                    const Text('Categoria:'),
+                    DropdownButton(
+                      value: _selectedCategory,
+                      items: Category.values
+                          .map(
+                            (category) => DropdownMenuItem(
+                              value: category,
+                              child: Text(
+                                toBeginningOfSentenceCase(category.name),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (value) {
+                        if (value == null) {
+                          return;
+                        }
+                        setState(() {
+                          _selectedCategory = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
               const Spacer(),
               TextButton(
