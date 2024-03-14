@@ -31,7 +31,7 @@ class _MyExpensesState extends State<MyExpenses> {
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
-      backgroundColor: const Color.fromARGB(255, 199, 187, 255),
+      //backgroundColor: const Color.fromARGB(255, 199, 187, 255),
     );
   }
 
