@@ -84,7 +84,7 @@ class _NewExpenseState extends State<NewExpense> {
             controller: _titleController,
             maxLength: 50,
             decoration: const InputDecoration(
-              label: Text('Nome'),
+              label: Text('Nome', style: TextStyle(color: Colors.black),),
             ),
           ),
           Row(
@@ -95,7 +95,7 @@ class _NewExpenseState extends State<NewExpense> {
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     prefixText: '\$ ',
-                    label: Text('Valor'),
+                    label: Text('Valor', style: TextStyle(color: Colors.black),),
                   ),
                 ),
               ),
@@ -110,6 +110,7 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedDate == null
                           ? 'Selecionar data'
                           : formatter.format(_selectedDate!),
+                      style: TextStyle(color: Colors.black)
                     ),
                     IconButton(
                       onPressed: _presentDatePicker,
@@ -132,6 +133,7 @@ class _NewExpenseState extends State<NewExpense> {
                         value: category,
                         child: Text(
                           toBeginningOfSentenceCase(category.name),
+                          style: TextStyle(color: Colors.black)
                         ),
                       ),
                     )
