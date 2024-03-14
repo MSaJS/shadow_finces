@@ -4,11 +4,15 @@ import 'package:shadow_finces/widgets/my_expenses.dart';
 
 var kColorScheme = ColorScheme.fromSeed(
   seedColor: const Color(0xff0b8185),
+  primaryContainer: const Color(0xff1f5f61),
+  onPrimaryContainer: Colors.white,
+  onBackground: Colors.black,
 );
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color(0xff0b8185),
+  primaryContainer: Colors.white,
 );
 
 void main() {
@@ -41,6 +45,9 @@ void main() {
         ),
       ),
       textTheme: ThemeData().textTheme.copyWith(
+            titleLarge: TextStyle(
+              fontSize: 19,
+            ),
             titleMedium: TextStyle(
               fontSize: 18,
             ),
@@ -48,7 +55,7 @@ void main() {
               fontSize: 16,
             ),
           ),
-      iconTheme: IconThemeData().copyWith(color: Colors.white),
+      iconTheme: IconThemeData().copyWith(color: kColorScheme.onPrimaryContainer),
     ),
     home: const MyExpenses(),
   ));

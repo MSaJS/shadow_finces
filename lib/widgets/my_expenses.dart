@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shadow_finces/main.dart';
 import 'package:shadow_finces/models/expense.dart';
 import 'package:shadow_finces/widgets/expenses_list/expenses_list.dart';
 import 'package:shadow_finces/widgets/new_expense.dart';
@@ -31,6 +32,7 @@ class _MyExpensesState extends State<MyExpenses> {
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
+      backgroundColor: ThemeData().colorScheme.copyWith().primaryContainer,
     );
   }
 
@@ -83,7 +85,7 @@ class _MyExpensesState extends State<MyExpenses> {
           ),
           const SizedBox(width: 15),
           Text('Minhas despesas',
-              style: Theme.of(context).textTheme.titleMedium),
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(color: kColorScheme.onBackground)),
           const Spacer(),
           IconButton(
             onPressed: () {},

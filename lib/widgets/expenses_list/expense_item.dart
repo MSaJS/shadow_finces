@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shadow_finces/main.dart';
 import 'package:shadow_finces/models/expense.dart';
 
 class ExpenseItem extends StatelessWidget {
@@ -19,12 +20,14 @@ class ExpenseItem extends StatelessWidget {
           children: [
             Text(
               expense.title,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(color: kColorScheme.onPrimaryContainer),
             ),
             const SizedBox(height: 4),
             Row(
               children: [
-                Text('R\$ ${expense.amount.toStringAsFixed(2)}'),
+                Text('R\$ ${expense.amount.toStringAsFixed(2)}',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: kColorScheme.onPrimaryContainer),
+                ),
                 const Spacer(),
                 Row(
                   children: [
