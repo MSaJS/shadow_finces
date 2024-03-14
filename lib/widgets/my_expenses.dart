@@ -84,7 +84,7 @@ class _MyExpensesState extends State<MyExpenses> {
           ),
           const SizedBox(width: 15),
           Text('Minhas despesas',
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(color: kColorScheme.onBackground)),
+              style: Theme.of(context).textTheme.titleLarge),
           const Spacer(),
           IconButton(
             onPressed: () {},
