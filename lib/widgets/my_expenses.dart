@@ -31,7 +31,6 @@ class _MyExpensesState extends State<MyExpenses> {
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
-      backgroundColor: const Color(0xff0b8185),
     );
   }
 
@@ -77,17 +76,14 @@ class _MyExpensesState extends State<MyExpenses> {
 
     return Scaffold(
       appBar: AppBar(
-
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.arrow_back),
           ),
           const SizedBox(width: 15),
-          Text(
-            'Minhas despesas',
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
-          ),
+          Text('Minhas despesas',
+              style: Theme.of(context).textTheme.titleMedium),
           const Spacer(),
           IconButton(
             onPressed: () {},
