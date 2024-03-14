@@ -49,7 +49,6 @@ void main() {
             ),
           ),
       iconTheme: IconThemeData().copyWith(color: Colors.white),
-      appBarTheme: AppBarTheme().copyWith(: Colors.black),
     ),
     home: const MyExpenses(),
   ));

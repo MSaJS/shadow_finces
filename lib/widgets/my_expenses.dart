@@ -77,6 +77,7 @@ class _MyExpensesState extends State<MyExpenses> {
 
     return Scaffold(
       appBar: AppBar(
+
         actions: [
           IconButton(
             onPressed: () {},
@@ -85,7 +86,7 @@ class _MyExpensesState extends State<MyExpenses> {
           const SizedBox(width: 15),
           Text(
             'Minhas despesas',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.black),
           ),
           const Spacer(),
           IconButton(
