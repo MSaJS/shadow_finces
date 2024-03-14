@@ -18,6 +18,7 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 void main() {
   runApp(MaterialApp(
     darkTheme: ThemeData.dark().copyWith(
+      
       colorScheme: kDarkColorScheme,
       cardTheme: const CardTheme().copyWith(
         color: const Color(0xff1f5f61),
@@ -34,7 +35,11 @@ void main() {
               fontSize: 16,
             ),
           ),
+      bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
+        backgroundColor: Colors.white
+      ),
     ),
+
     theme: ThemeData().copyWith(
       colorScheme: kColorScheme,
       cardTheme: const CardTheme().copyWith(
@@ -56,6 +61,9 @@ void main() {
             ),
           ),
       iconTheme: IconThemeData().copyWith(color: kColorScheme.onPrimaryContainer),
+      bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
+        backgroundColor: Colors.black
+      ),
     ),
     home: const MyExpenses(),
   ));

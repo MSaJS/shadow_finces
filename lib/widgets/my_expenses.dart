@@ -32,7 +32,6 @@ class _MyExpensesState extends State<MyExpenses> {
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
-      backgroundColor: ThemeData().colorScheme.copyWith().primaryContainer,
     );
   }
 
