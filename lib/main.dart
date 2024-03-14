@@ -46,6 +46,17 @@ void main() {
       bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
             backgroundColor: const Color(0xff1f5f61),
           ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: TextStyle(
+            color: kDarkColorScheme.onPrimaryContainer,
+          ),
+        ),
+      ),
+      inputDecorationTheme: const InputDecorationTheme().copyWith(
+        labelStyle: TextStyle(color: kDarkColorScheme.onPrimaryContainer.withAlpha(200)),
+        prefixStyle: TextStyle(color: kDarkColorScheme.onPrimaryContainer.withAlpha(200)),
+      ),
     ),
     theme: ThemeData().copyWith(
       colorScheme: kColorScheme,
