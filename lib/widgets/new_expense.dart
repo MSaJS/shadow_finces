@@ -110,6 +110,9 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedDate == null
                           ? 'Selecionar data'
                           : formatter.format(_selectedDate!),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                     IconButton(
                       onPressed: _presentDatePicker,
@@ -132,6 +135,9 @@ class _NewExpenseState extends State<NewExpense> {
                         value: category,
                         child: Text(
                           toBeginningOfSentenceCase(category.name),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
                       ),
                     )

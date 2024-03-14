@@ -41,21 +41,29 @@ void main() {
             bodyMedium: TextStyle(
               fontSize: 16,
               color: kDarkColorScheme.onPrimaryContainer,
+              fontWeight: FontWeight.w400,
             ),
           ),
       bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
             backgroundColor: const Color(0xff1f5f61),
           ),
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          textStyle: TextStyle(
-            color: kDarkColorScheme.onPrimaryContainer,
-          ),
+      inputDecorationTheme: const InputDecorationTheme().copyWith(
+        labelStyle: TextStyle(
+          color: kDarkColorScheme.onPrimaryContainer.withAlpha(200),
+          fontWeight: FontWeight.w400,
+        ),
+        prefixStyle: TextStyle(
+          color: kDarkColorScheme.onPrimaryContainer.withAlpha(200),
+          fontWeight: FontWeight.w400,
         ),
       ),
-      inputDecorationTheme: const InputDecorationTheme().copyWith(
-        labelStyle: TextStyle(color: kDarkColorScheme.onPrimaryContainer.withAlpha(200)),
-        prefixStyle: TextStyle(color: kDarkColorScheme.onPrimaryContainer.withAlpha(200)),
+      dialogTheme: const DialogTheme().copyWith(
+        backgroundColor: kDarkColorScheme.primaryContainer,
+        titleTextStyle: const TextStyle().copyWith(
+            fontWeight: FontWeight.w500,
+            color: const Color.fromARGB(255, 7, 53, 54),
+            fontSize: 25),
+        contentTextStyle: const TextStyle(fontSize: 17),
       ),
     ),
     theme: ThemeData().copyWith(
