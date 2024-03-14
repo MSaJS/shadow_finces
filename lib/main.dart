@@ -45,7 +45,7 @@ void main() {
             ),
           ),
       bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
-            backgroundColor: const Color(0xff1f5f61),
+            backgroundColor: kDarkColorScheme.primaryContainer,
           ),
       inputDecorationTheme: const InputDecorationTheme().copyWith(
         labelStyle: TextStyle(
@@ -88,6 +88,7 @@ void main() {
             bodyMedium: TextStyle(
               fontSize: 16,
               color: kColorScheme.onPrimaryContainer,
+              fontWeight: FontWeight.w400,
             ),
           ),
       iconTheme: const IconThemeData().copyWith(
@@ -96,6 +97,24 @@ void main() {
       bottomSheetTheme: ThemeData().bottomSheetTheme.copyWith(
             backgroundColor: kColorScheme.primaryContainer,
           ),
+      inputDecorationTheme: const InputDecorationTheme().copyWith(
+        labelStyle: TextStyle(
+          color: kColorScheme.onPrimaryContainer.withAlpha(200),
+          fontWeight: FontWeight.w400,
+        ),
+        prefixStyle: TextStyle(
+          color: kColorScheme.onPrimaryContainer.withAlpha(200),
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      dialogTheme: const DialogTheme().copyWith(
+        backgroundColor: kColorScheme.primaryContainer,
+        titleTextStyle: const TextStyle().copyWith(
+            fontWeight: FontWeight.w500,
+            color: const Color.fromARGB(255, 7, 53, 54),
+            fontSize: 25),
+        contentTextStyle: const TextStyle(fontSize: 17),
+      ),
     ),
     home: const MyExpenses(),
   ));
