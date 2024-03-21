@@ -79,3 +79,22 @@ class Expense {
 // Lembrete -
 // Ignorar --
 
+class ExpenseBucket {
+  const ExpenseBucket({required this.category, required this.expenses,});
+
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category) : ;
+  
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalExpenses {
+    double sum = 0;
+
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+
+    return sum;
+  }
+
+}
