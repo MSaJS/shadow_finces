@@ -28,40 +28,39 @@ const categoryIcons = {
 class Expense {
   Expense({
     required this.title,
-    required this.description,
-    required this.note,
+    // required this.description,
+    // required this.note,
     //this.fixed,
     //this.repeat,
-    required this.tag,
-    required this.ignore,
+    // required this.tag,
+    // required this.ignore,
     required this.amount,
     required this.date,
     required this.category,
-    required this.account,
-    required this.paid,
+    // required this.account,
+    // required this.paid,
   }) : id = uuid.v4();
 
   final String id;
   final double amount;
   final DateTime date;
   final Category category;
-  final Account account;
-  final bool paid;
+  // final Account account;
+  // final bool paid;
 
   final String title;
-  final String description;
-  final String note;
+  // final String description;
+  // final String note;
   //final bool fixed;
   //final int repeat;
-  final Tag tag;
-  final bool ignore;
+  // final Tag tag;
+  // final bool ignore;
   // final XXXX reminder;
 
   String get formattedDate {
     return formatter.format(date);
   }
 }
-
 
 // Valor --
 // Pago --
@@ -79,3 +78,4 @@ class Expense {
 // Tags --
 // Lembrete -
 // Ignorar --
+
