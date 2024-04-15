@@ -67,9 +67,9 @@ class Expense {
 // Descrição --
 // Data --
 // Repetir ,
-//  TODO 
-//    fixo? Diaria,Semanal,Quinzenal,Mensal... 
-//    parcelado? int : Diario,Semanal,Quin... 
+//  TODO
+//    fixo? Diaria,Semanal,Quinzenal,Mensal...
+//    parcelado? int : Diario,Semanal,Quin...
 //    repete_apenas? int : Diario,Sem...
 //
 // Categoria --
@@ -80,10 +80,14 @@ class Expense {
 // Ignorar --
 
 class ExpenseBucket {
-  const ExpenseBucket({required this.category, required this.expenses,});
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
 
-  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category) : ;
-  
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses.where((expense) => expense.category == category).toList();
+
   final Category category;
   final List<Expense> expenses;
 
@@ -96,5 +100,4 @@ class ExpenseBucket {
 
     return sum;
   }
-
 }

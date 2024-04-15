@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shadow_finces/main.dart';
+// import 'package:shadow_finces/main.dart';
 import 'package:shadow_finces/models/expense.dart';
 import 'package:shadow_finces/widgets/expenses_list/expenses_list.dart';
-import 'package:shadow_finces/widgets/nav_bar/my_navbar.dart';
+// import 'package:shadow_finces/widgets/nav_bar/my_navbar.dart';
 import 'package:shadow_finces/widgets/new_expense.dart';
 
 class MyExpenses extends StatefulWidget {
@@ -103,13 +103,13 @@ class _MyExpensesState extends State<MyExpenses> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        shape: CircleBorder(),
-        child: Icon(Icons.add),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: MyNavBar(),
+      // floatingActionButton: FloatingActionButton(
+      //   shape: const CircleBorder(),
+      //   child: const Icon(Icons.add),
+      //   onPressed: () {},
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // bottomNavigationBar: MyNavBar(),
       body: Column(
         children: [
           Expanded(
