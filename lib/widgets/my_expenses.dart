@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:shadow_finces/main.dart';
 import 'package:shadow_finces/models/expense.dart';
+import 'package:shadow_finces/widgets/chart/chart.dart';
+import 'package:shadow_finces/widgets/chart/pie_chart.dart';
 import 'package:shadow_finces/widgets/expenses_list/expenses_list.dart';
 // import 'package:shadow_finces/widgets/nav_bar/my_navbar.dart';
 import 'package:shadow_finces/widgets/new_expense.dart';
@@ -112,6 +114,7 @@ class _MyExpensesState extends State<MyExpenses> {
       // bottomNavigationBar: MyNavBar(),
       body: Column(
         children: [
+          PieChartCategory(expenses: _registeredExpenses),
           Expanded(
             child: mainContent,
           ),

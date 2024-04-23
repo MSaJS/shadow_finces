@@ -25,6 +25,13 @@ const categoryIcons = {
   Category.transporte: Icons.directions_bus,
 };
 
+const categoryColors = {
+  Category.comida: Colors.red,
+  Category.contas: Colors.brown,
+  Category.lazer: Colors.blue,
+  Category.transporte: Colors.yellow,
+};
+
 class Expense {
   Expense({
     required this.title,
@@ -67,7 +74,7 @@ class Expense {
 // Descrição --
 // Data --
 // Repetir ,
-//  TODO
+//
 //    fixo? Diaria,Semanal,Quinzenal,Mensal...
 //    parcelado? int : Diario,Semanal,Quin...
 //    repete_apenas? int : Diario,Sem...
