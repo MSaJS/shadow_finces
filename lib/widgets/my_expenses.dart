@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 // import 'package:shadow_finces/main.dart';
 import 'package:shadow_finces/models/expense.dart';
 import 'package:shadow_finces/widgets/chart/chart.dart';
@@ -67,6 +68,8 @@ class _MyExpensesState extends State<MyExpenses> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     Widget mainContent = const Center(
       child: Text('Nenhuma despesa encontrada. Tente adicionar uma nova!'),
     );
@@ -112,14 +115,24 @@ class _MyExpensesState extends State<MyExpenses> {
       // ),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       // bottomNavigationBar: MyNavBar(),
-      body: Column(
-        children: [
-          PieChartCategory(expenses: _registeredExpenses),
-          Expanded(
-            child: mainContent,
-          ),
-        ],
-      ),
+      body: width < 600
+          ? Column(
+              children: [
+                PieChartCategory(expenses: _registeredExpenses),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(
+                    child: PieChartCategory(expenses: _registeredExpenses)),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            ),
     );
   }
 }

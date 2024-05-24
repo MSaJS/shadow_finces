@@ -34,11 +34,15 @@ class PieChartCategory extends StatelessWidget {
     final isDarkMode =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 16,
+      ),
       margin: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 10,
-        ),
-
+        horizontal: 10,
+        vertical: 10,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Theme.of(context).colorScheme.primaryContainer,
@@ -46,12 +50,13 @@ class PieChartCategory extends StatelessWidget {
       child: Column(
         children: [
           Text('adf'),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: AspectRatio(
+          SizedBox(
+            height: 230,
+            child: AspectRatio(
+              aspectRatio: 1.3,
+              child: Row(
+                children: <Widget>[
+                  AspectRatio(
                     aspectRatio: 1,
                     child: PieChart(
                       PieChartData(
@@ -64,7 +69,9 @@ class PieChartCategory extends StatelessWidget {
                                   : bucket.totalExpenses / maxTotalExpense,
                               badgeWidget: Icon(
                                 categoryIcons[bucket.category],
-                                color: Theme.of(context).colorScheme.onPrimaryContainer,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onPrimaryContainer,
                                 size: 30,
                               ),
                               badgePositionPercentageOffset: 1.7,
@@ -88,23 +95,23 @@ class PieChartCategory extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    for (final bucket in buckets) // alternative to map()
-                      ChartBar(
-                        fill: bucket.totalExpenses == 0
-                            ? 0
-                            : bucket.totalExpenses / maxTotalExpense,
-                      ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 28,
-                ),
-              ],
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (final bucket in buckets) // alternative to map()
+                        ChartBar(
+                          fill: bucket.totalExpenses == 0
+                              ? 0
+                              : bucket.totalExpenses / maxTotalExpense,
+                        ),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 28,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
