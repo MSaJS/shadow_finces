@@ -49,69 +49,55 @@ class PieChartCategory extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text('adf'),
           SizedBox(
             height: 230,
-            child: AspectRatio(
-              aspectRatio: 1.3,
-              child: Row(
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: PieChart(
-                      PieChartData(
-                        sections: [
-                          for (final bucket in buckets) // alternative to map()
-                            PieChartSectionData(
-                              color: categoryColors[bucket.category],
-                              value: bucket.totalExpenses == 0
-                                  ? 0
-                                  : bucket.totalExpenses / maxTotalExpense,
-                              badgeWidget: Icon(
-                                categoryIcons[bucket.category],
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .onPrimaryContainer,
-                                size: 30,
-                              ),
-                              badgePositionPercentageOffset: 1.7,
-                              showTitle: false,
-                              radius: 25.0,
-                              titleStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                shadows: [
-                                  Shadow(color: Colors.black, blurRadius: 2)
-                                ],
-                              ),
-                            )
-                        ],
-                        borderData: FlBorderData(
-                          show: true,
-                        ),
-                        sectionsSpace: 0,
-                        centerSpaceRadius: 40,
+            child: Row(
+              children: <Widget>[
+                AspectRatio(
+                  aspectRatio: 1,
+                  child: PieChart(
+                    PieChartData(
+                      sections: [
+                        for (final bucket in buckets) // alternative to map()
+                          PieChartSectionData(
+                            color: categoryColors[bucket.category],
+                            value: bucket.totalExpenses == 0
+                                ? 0
+                                : bucket.totalExpenses / maxTotalExpense,
+                            badgeWidget: Icon(
+                              categoryIcons[bucket.category],
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              size: 30,
+                            ),
+                            badgePositionPercentageOffset: 1.7,
+                            showTitle: false,
+                            radius: 25.0,
+                            titleStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              shadows: [
+                                Shadow(color: Colors.black, blurRadius: 2)
+                              ],
+                            ),
+                          )
+                      ],
+                      borderData: FlBorderData(
+                        show: true,
                       ),
+                      sectionsSpace: 0,
+                      centerSpaceRadius: 40,
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      for (final bucket in buckets) // alternative to map()
-                        ChartBar(
-                          fill: bucket.totalExpenses == 0
-                              ? 0
-                              : bucket.totalExpenses / maxTotalExpense,
-                        ),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: 28,
-                  ),
-                ],
-              ),
+                ),
+                Column(
+                  children: [
+                    Text("teste"),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
